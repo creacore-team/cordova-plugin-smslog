@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="cordova-plugin-smslog"
+  version="1.0.0">
+  <name>SMSLOG</name>
+  <description>A plugin to get the device's sms log</description>
+  <license>MIT</license>
+  <keywords>cordova,smslog</keywords>
+  <repo>https://github.com/creacore-team/cordova-plugin-smslog</repo>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+    <engine name="cordova-android" version=">=5.0.0"/>
+  </engines>
+
+  <js-module src="www/smslog.js" name="SmsLog">
+    <merges target="window.plugins.smsLog" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <uses-sdk android:minSdkVersion="19" />
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="SmsLog">
+        <param name="android-package" value="be.creacore.smslog.SmsLog"/>
+      </feature>
+    </config-file>
+
+    <config-file target="AndroidManifest.xml" parent="/*">
+      <uses-permission android:name="android.permission.READ_SMS" />
+    </config-file>
+
+    <source-file src="src/android/be/creacore/smslog/SmsLog.java" target-dir="src/be/creacore/smslog" />
+    <source-file src="src/android/be/creacore/smslog/Utils.java" target-dir="src/be/creacore/smslog" />
+    <source-file src="src/android/be/creacore/smslog/Filter.java" target-dir="src/be/creacore/smslog" />
+
+    <js-module src="www/android/smslog.js" name="SmsLogAndroid">
+      <merges target="window.plugins.smsLog" />
+    </js-module>
+  </platform>
+
+</plugin>

@@ -1,0 +1,37 @@
+{
+  "name": "cordova-plugin-smslog",
+  "version": "1.0.0",
+  "description": "A plugin to get the device's sms log",
+  "cordova": {
+    "id": "cordova-plugin-smslog",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/creacore-team/cordova-plugin-smslog.git"
+  },
+  "keywords": [
+    "cordova",
+    "smslog",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    },
+    {
+      "name": "cordova-android",
+      "version": ">=5.0.0"
+    }
+  ],
+  "author": "Creacore",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/creacore-team/cordova-plugin-smslog/issues"
+  },
+  "homepage": "https://github.com/creacore-team/cordova-plugin-smslog#readme"
+}
