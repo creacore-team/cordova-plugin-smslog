@@ -25,7 +25,7 @@ First of all you must check / request permissions with
 Then you can use the main function getsmsLog(), here is an example:
 
     let filters = [{
-        "name": "number",
+        "name": "address",
         "value": "+32477000000",
         "operator": "==",
     },
