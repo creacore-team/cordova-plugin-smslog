@@ -71,9 +71,11 @@ public class SmsLog extends CordovaPlugin {
             List<String> fields = new ArrayList<String>();
             String[] fields_names = new String[]{
                 Telephony.TextBasedSmsColumns.ADDRESS,
+                Telephony.TextBasedSmsColumns.BODY,
                 Telephony.TextBasedSmsColumns.DATE,
                 Telephony.TextBasedSmsColumns.READ,
-                Telephony.TextBasedSmsColumns.TYPE
+                Telephony.TextBasedSmsColumns.TYPE,
+                Telephony.TextBasedSmsColumns.THREAD_ID
             };
             Collections.addAll(fields, fields_names);
 
@@ -92,7 +94,7 @@ public class SmsLog extends CordovaPlugin {
                             f.getName() == Telephony.TextBasedSmsColumns.SUBSCRIPTION_ID) {
                         continue;
                     }
-                    
+
                     mSelectionClause = Utils.appendFilterToClause(f, mSelectionClause);
                     mSelectionArgs.add(f.getValue());
                 }
@@ -113,14 +115,16 @@ public class SmsLog extends CordovaPlugin {
                     while (mCursor.moveToNext()) {
                         JSONObject smsLogItem = new JSONObject();
                         smsLogItem.put("address", mCursor.getString(0));
-                        smsLogItem.put("date", mCursor.getString(1));
-                        smsLogItem.put("read", mCursor.getString(2));
-                        smsLogItem.put("type", mCursor.getString(3));
+                        smsLogItem.put("bodyLength", mCursor.getString(1).length());
+                        smsLogItem.put("date", mCursor.getString(2));
+                        smsLogItem.put("read", mCursor.getString(3));
+                        smsLogItem.put("type", mCursor.getString(4));
+                        smsLogItem.put("threadId", mCursor.getString(5));
 
                         if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-                            smsLogItem.put("subscriptionId", mCursor.getString(4));
+                            smsLogItem.put("subscriptionId", mCursor.getString(6));
                         }
-                        
+
                         result.put(smsLogItem);
                     }
                 }
