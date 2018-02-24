@@ -79,7 +79,7 @@ public class SmsLog extends CordovaPlugin {
 
             // Detect specifics version
             if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-                Telephony.TextBasedSmsColumns.SUBSCRIPTION_ID);
+                fields.add(Telephony.TextBasedSmsColumns.SUBSCRIPTION_ID);
             }
 
             List<String> mSelectionArgs = new ArrayList<String>();
