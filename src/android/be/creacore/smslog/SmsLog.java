@@ -116,7 +116,7 @@ public class SmsLog extends CordovaPlugin {
                         JSONObject smsLogItem = new JSONObject();
                         smsLogItem.put("address", mCursor.getString(0));
                         smsLogItem.put("bodyLength", mCursor.getString(1).length());
-                        smsLogItem.put("date", mCursor.getString(2));
+                        smsLogItem.put("date", mCursor.getLong(2));
                         smsLogItem.put("read", mCursor.getString(3));
                         smsLogItem.put("type", mCursor.getString(4));
                         smsLogItem.put("threadId", mCursor.getString(5));
