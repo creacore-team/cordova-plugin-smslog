@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-smslog",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A plugin to get the device's sms log",
   "cordova": {
     "id": "cordova-plugin-smslog",
