@@ -59,6 +59,10 @@ getSmsLog() return an array of objects with these values
 - DATE
 - READ
 - TYPE
+- THREAD_ID
 
 (Android API >= 22)
 - SUBSCRIPTION_ID
+
+An additional value, calculated by the plugin, containing the number of characters in the text message
+- bodyLength
