@@ -53,7 +53,7 @@ This will return all sms from/to the number +32477000000 since 2018-01-30
 ## Returned values
 
 getSmsLog() return an array of objects with these values
-(see https://developer.android.com/reference/android/provider/smsLog.Calls.html)
+(see https://developer.android.com/reference/android/provider/Telephony.TextBasedSmsColumns.html)
 
 - ADDRESS
 - DATE
