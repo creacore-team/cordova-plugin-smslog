@@ -1,6 +1,6 @@
 module.exports = {
-  getSmsLog: function(filters, successCallback, errorCallback) {
-    cordova.exec(successCallback, errorCallback, "SmsLog", "getSmsLog", [filters]);
+  getSmsLog: function(filters, withBody, successCallback, errorCallback) {
+    cordova.exec(successCallback, errorCallback, "SmsLog", "getSmsLog", [filters, withBody]);
   }
 };
   

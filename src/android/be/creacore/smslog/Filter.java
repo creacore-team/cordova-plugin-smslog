@@ -1,20 +1,22 @@
 package be.creacore.smslog;
 
-import android.provider.*;
-import android.provider.CallLog;
-
+import android.provider.Telephony;
 import java.util.Arrays;
 
 public class Filter {
     private String name;
     private String value;
     private String operator;
+    private String operation = "AND";
 
     public static String[] validNames = {
         Telephony.TextBasedSmsColumns.ADDRESS,
+        Telephony.TextBasedSmsColumns.BODY,
         Telephony.TextBasedSmsColumns.DATE,
+        Telephony.TextBasedSmsColumns.DATE_SENT,
+        Telephony.TextBasedSmsColumns.READ,
+        Telephony.TextBasedSmsColumns.SUBSCRIPTION_ID,
         Telephony.TextBasedSmsColumns.TYPE,
-        Telephony.TextBasedSmsColumns.SUBSCRIPTION_ID
     };
 
     public String getName() {
@@ -43,5 +45,13 @@ public class Filter {
 
     public void setOperator(String operator) {
         this.operator = operator;
+    }
+
+    public void setOperation(String operation) {
+        this.operation = operation;
+    }
+
+    public String getOperation() {
+        return this.operation;
     }
 }
