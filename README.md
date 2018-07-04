@@ -75,6 +75,7 @@ getSmsLog() return an array of objects with these values
 
 - ADDRESS
 - DATE
+- DATE_SENT
 - READ
 - TYPE
 - THREAD_ID
